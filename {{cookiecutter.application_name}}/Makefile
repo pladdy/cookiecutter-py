@@ -1,10 +1,12 @@
-.PHONY: bump-patch bump-minor bump-major poetry run-debug
+.PHONY: all bump-patch bump-minor bump-major clean poetry run-debug
 .PHONY: format lint security vulnerability
 .PHONY: cov-reports cover test
 
 APP = {{cookiecutter.application_directory}}
 TEST = poetry run pytest -x -s -rA --durations=10 -vv --cov $(APP) $(TESTS)
 TESTS = tests
+
+all: poetry install
 
 bump-patch:
 	poetry run bumpversion patch
@@ -14,6 +16,13 @@ bump-minor:
 
 bump-major:
 	poetry run bumpversion major
+
+clean:
+	find ./ -type d -name *__pycache__ -exec rm -rf {} \;
+	rm .coverage
+	rm coverage.xml
+	rm -rf .pytest_cache
+	rm -rf htmlcov
 
 cov-reports:
 	$(TEST) --cov-report html

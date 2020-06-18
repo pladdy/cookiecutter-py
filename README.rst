@@ -37,7 +37,7 @@ Further project setup
 - ``cd to-project-dir``
 - ``git init``
 - ``git add .``
-- ``git commit -m "First commit"``
+- ``git commit -m "Iniital commit"``
 - Go back to the project to get your project url for setting up a remote
 - ``git remote add origin git@github.com:pladdy/<project name>``
 - ``git remote -v # to verify``

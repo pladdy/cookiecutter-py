@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "{{cookiecutter.application_name}}"
 version = "0.1.0"
-description = "Playground for messing with json schemas."
+description = ""
 authors = ["Matt Pladna <pladdypants@gmail.com>"]
 license = "MIT"
 
@@ -10,7 +10,6 @@ python = "^3.6"
 
 [tool.poetry.dev-dependencies]
 pytest = "~=5.3"
-bumpversion = "~=0.6"
 black = "^19.10b0"
 flake8 = "~=3.8.2"
 bandit = "~=1.6.2"

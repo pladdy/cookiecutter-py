@@ -9,20 +9,18 @@ TESTS = tests
 all: poetry install
 
 bump-patch:
-	poetry run bumpversion patch
+	poetry run dephell project bump patch
 
 bump-minor:
-	poetry run bumpversion minor
+	poetry run dephell project bump minor
 
 bump-major:
-	poetry run bumpversion major
+	poetry run dephell project bump major
 
 clean:
 	find ./ -type d -name *__pycache__ -exec rm -rf {} \;
-	rm .coverage
-	rm coverage.xml
-	rm -rf .pytest_cache
-	rm -rf htmlcov
+	rm .coverage coverage.xml
+	rm -rf .pytest_cache htmlcov
 
 cov-reports:
 	$(TEST) --cov-report html

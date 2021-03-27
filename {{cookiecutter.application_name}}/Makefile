@@ -41,12 +41,15 @@ install:
 
 lint: pre-commit
 
-POETRY_VERSION = 1.1.3
+POETRY_VERSION = 1.1.5
 poetry:
 	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/$(POETRY_VERSION)/get-poetry.py | python
 
 pre-commit:
 	pre-commit run --all-files
+
+pre-commit-update:
+	pre-commit autoupdate
 
 release:
 	git push && git push --tags
